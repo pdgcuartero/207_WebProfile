@@ -5,11 +5,11 @@
 function showFact() {
 
     const facts = [
-        "I enjoy learning Mandarin and Taiwanese.",
-        "I like building dashboards and data visualizations.",
+        "I am currently living in Taiwan and working as a semiconductor engineer.",
+        "I am an introverted person but my work requires me to discuss with different suppliers.",
         "I enjoy traveling and exploring new cultures.",
-        "I enjoy exploring new technologies.",
-        "I like studying languages and meeting people from different cultures."
+        "I learned how to ride a bike when I was just 27 years old for only 2 days without scratches on my body.",
+        "I love make my house clean and tidy."
     ];
 
     const randomFact = facts[Math.floor(Math.random() * facts.length)];
