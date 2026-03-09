@@ -1,94 +1,146 @@
-body{
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* General styling */
+body {
     font-family: Arial, Helvetica, sans-serif;
-    margin:0;
-    background:#f5f5f5;
-    line-height:1.6;
-    padding-top:120px;
+    margin: 0;
+    background: #f5f5f5;
+    line-height: 1.6;
 }
 
-header{
-    background:#2c3e50;
-    color:white;
-    text-align:center;
-    padding:20px;
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-}
-nav ul{
-    list-style:none;
-    padding:0;
+/* Sticky header */
+header {
+    position: sticky;
+    top: 0;
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
 }
 
-nav li{
-    display:inline;
-    margin:0 15px;
+/* Shadow appears when scrolling */
+header.scrolled {
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    font-weight:bold;
+/* Navigation */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
 }
 
-nav a:hover{
-    color:#f39c12;
+nav li {
+    display: inline;
+    margin: 0 15px;
 }
 
-section{
-    padding:40px;
-    background:white;
-    margin:20px;
-    border-radius:8px;
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-img{
-    width:200px;
-    border-radius:50%;
+/* Hover effect */
+nav a:hover {
+    color: #f39c12;
 }
 
-button{
-    padding:10px 20px;
-    border:none;
-    background:#3498db;
-    color:white;
-    cursor:pointer;
-    border-radius:5px;
-    margin-top:10px;
+/* Sections */
+section {
+    padding: 40px;
+    background: white;
+    margin: 20px;
+    border-radius: 8px;
+
+    /* fade-in animation */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.8s ease forwards;
 }
 
-button:hover{
-    background:#2980b9;
+/* Delay each section slightly */
+section:nth-child(2) { animation-delay: 0.2s; }
+section:nth-child(3) { animation-delay: 0.4s; }
+section:nth-child(4) { animation-delay: 0.6s; }
+
+/* Fade animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.hobby{
-    margin-bottom:20px;
+/* Profile image */
+img {
+    width: 200px;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 15px;
 }
 
-footer{
-    text-align:center;
-    padding:20px;
-    background:#2c3e50;
-    color:white;
+/* Button */
+button {
+    padding: 10px 20px;
+    border: none;
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: transform 0.2s, background 0.3s;
 }
 
-/* Responsive Design */
+/* Button hover */
+button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
 
-@media(max-width:768px){
+/* Hobby cards */
+.hobby {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #fafafa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    nav li{
-        display:block;
-        margin:10px 0;
+/* Card hover animation */
+.hobby:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.15);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2c3e50;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+
+    nav li {
+        display: block;
+        margin: 10px 0;
     }
 
-    section{
-        margin:10px;
-        padding:20px;
+    section {
+        margin: 10px;
+        padding: 20px;
     }
 
-    img{
-        width:150px;
+    img {
+        width: 150px;
     }
-
 }
