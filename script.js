@@ -17,11 +17,6 @@ function showFact() {
     document.getElementById("funFact").innerText = randomFact;
 }
 
-
-/* =========================
-   Header Shadow on Scroll
-   ========================= */
-
 window.addEventListener("scroll", function () {
 
     const header = document.querySelector("header");
